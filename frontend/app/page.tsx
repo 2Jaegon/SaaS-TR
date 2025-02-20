@@ -95,7 +95,7 @@ export default function Home() {
         const response = await fetch("/api/translate", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ text: selectedText, targetLang }),
+          body: JSON.stringify({ text: selectedText, sourceLang, targetLang }),
         });
     
         console.log("🔄 응답 상태 코드:", response.status);
