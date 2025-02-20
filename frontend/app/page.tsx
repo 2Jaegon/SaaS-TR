@@ -5,11 +5,12 @@ import { useDropzone } from "react-dropzone";
 import { Worker, Viewer } from "@react-pdf-viewer/core";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 
-// @ts-expect-error
+// @ts-expect-error: pdfjs-dist has no TypeScript support
 import * as pdfjsLib from "pdfjs-dist/build/pdf";
 
-// @ts-expect-error
+// @ts-expect-error: pdfjs-dist worker module lacks type definitions
 import pdfWorker from "pdfjs-dist/build/pdf.worker.entry";
+
 
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorker;
