@@ -13,10 +13,10 @@ export async function POST(req: Request) {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams({
-          auth_key: process.env.DEEPL_API_KEY,
-          text: text,
-          target_lang: targetLang.toUpperCase(),
-        }),
+          auth_key: process.env.DEEPL_API_KEY || "",  // ❌ undefined 방지
+          text: text.toString(),                      // ❌ any 타입 방지
+          target_lang: targetLang.toUpperCase(),      
+        }).toString(),  // ✅ URLSearchParams를 문자열로 변환해야 함!        
       });
       
   
