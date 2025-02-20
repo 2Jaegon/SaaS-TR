@@ -8,6 +8,7 @@ import "@react-pdf-viewer/core/lib/styles/index.css";
 import * as pdfjsLib from "pdfjs-dist/build/pdf";
 import pdfWorker from "pdfjs-dist/build/pdf.worker.entry";
 
+
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorker;
 
 // 번역 가능한 언어 리스트 (각 국가의 언어로 표기)
@@ -34,7 +35,7 @@ export default function Home() {
   const [translatedText, setTranslatedText] = useState<string>("");
 
   const [detectedLanguage, setDetectedLanguage] = useState<string>("감지 중..."); // 감지된 언어
-  //const [sourceLang, setSourceLang] = useState<string>("auto"); // 감지된 언어 (자동 감지)
+  const [sourceLang, setSourceLang] = useState<string>("auto"); // 감지된 언어 (자동 감지)
   const [targetLang, setTargetLang] = useState<string>("KO"); // 번역할 언어
 
   const [loading, setLoading] = useState<boolean>(false);
