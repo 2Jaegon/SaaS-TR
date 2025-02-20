@@ -5,11 +5,12 @@ import { useDropzone } from "react-dropzone";
 import { Worker, Viewer } from "@react-pdf-viewer/core";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 
-// @ts-ignore
+// @ts-expect-error
 import * as pdfjsLib from "pdfjs-dist/build/pdf";
 
-// @ts-ignore
+// @ts-expect-error
 import pdfWorker from "pdfjs-dist/build/pdf.worker.entry";
+
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorker;
 
